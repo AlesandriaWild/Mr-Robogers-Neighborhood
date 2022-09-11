@@ -1,0 +1,20 @@
+.hidden{
+  display: none;
+}
+
+.container {
+  min-width: 992px !important;
+}
+
+.kbd {
+  padding: 0.2rem 0.4rem;
+  font-size: 87.5%;
+  color: #fff;
+  background-color: #212529;
+  border-radius: 0.2rem;
+}
+
+.btn {
+  color: #fff;
+  background-color: #414951;
+}
