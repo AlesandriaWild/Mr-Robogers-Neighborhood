@@ -1,35 +1,38 @@
-function mrRobo(word) {
-  let inputVal;
-  let wordToArray = word.split('');
-    for(let i = 0; i <=1; i+=1) {
-      if(wordToArray[0] === beep[i]) {
-        inputVal = word + "Beep!"
-      }
+function mrRobo(input) {
+  let inputVal = []
+  const inputNumber = parseInt(input);
+    for(let i = 0; i <= inputNumber; i+=1) {
+        inputVal.push(i.toString());
     }
-    let inputValToString = inputVal.toString();
-    return inputValToString;
+    return inputVal;
+  }
+
+function mrRoboNeigh(inputVal) {
+  let newVal;
+  inputVal.forEach(function(Element){
+    if (Element.includes("1")) {
+      newVal.push("Bippity");
+  } else if (Element.includes("2")) {
+    newVal.push("Boopity!");
+  } else if (Element.includes("3")) {
+    newVal.push("Beep");
+  } else  {
+    newVal.push("Boo!");
+  }
+});
+  return newVal;
 };
 
-function mrRoboNeigh(word) {
-  let inputVal;
-  let wordToArray = word.split('');
-    for(let i = 0; i <=1; i+=1) {
-      if(wordToArray[0] === boop[i]) {
-        inputVal = word + "Boop!"
-      }
-    }
-    let inputValToString = inputVal.toString();
-    return inputValToString;
-};
+function mrRobogersNeighborhood(e) {
+  e.preventDefault();
+  const magicNumber = document.getElementById("input-number").value;
+  const newVal = mrRoboNeigh(createArray(magicNumber));
+  const magNumOutput = document.getElementById("magNum");
+  magNumOutput.innerText = newVal;
+  magNumOutput.removeAttribute("class");
+}
 
-function mrRobogersNeighborhood(word) {
-  let inputVal;
-  let wordToArray = word.split('');
-    for(let i = 0; i <=1; i+=1); {
-      if(wordToArray[0] === neighbor[i]) {
-        inputVal = word + "Won't you be my neighbor?"
-      }
-    }
-    let inputValToString = inputVal.toString();
-    return inputValToString;
-};
+window.addEventListener("load", function() {
+  const form = document.getElementById("num-input");
+  form.addEventListener("submit", mrRobogersNeighborhood)
+});
