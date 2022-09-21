@@ -8,25 +8,24 @@ function mrRobo(input) {
   }
 
 function mrRoboNeigh(inputVal) {
-  let newVal;
-  inputVal.forEach(function(Element){
-    if (Element.includes("1")) {
-      newVal.push("Bippity");
-  } else if (Element.includes("2")) {
-    newVal.push("Boopity!");
-  } else if (Element.includes("3")) {
-    newVal.push("Beep");
-  } else  {
-    newVal.push("Boo!");
+  const newArray = inputVal.map((element) => {
+    if (element.includes("3")) {
+      return "Won't you be my neighbor?";
+  } else if (element.includes("2")) {
+      return "Boop";
+  } else if (element.includes("1")) {
+      return "Beep";
+  } else {
+    return element;
   }
 });
-  return newVal;
+  return newArray;
 };
 
 function mrRobogersNeighborhood(e) {
   e.preventDefault();
   const magicNumber = document.getElementById("input-number").value;
-  const newVal = mrRoboNeigh(createArray(magicNumber));
+  const newVal = mrRoboNeigh(mrRobo(magicNumber));
   const magNumOutput = document.getElementById("magNum");
   magNumOutput.innerText = newVal;
   magNumOutput.removeAttribute("class");
