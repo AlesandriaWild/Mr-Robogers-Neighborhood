@@ -15,6 +15,9 @@
 }
 
 .btn {
-  color: #fff;
+  background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);   -webkit-background-clip: text;
+  color: transparent;
   background-color: #414951;
+  font-size: 30px;
+
 }
